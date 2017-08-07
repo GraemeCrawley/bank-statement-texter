@@ -121,13 +121,13 @@ client = Client(account_sid, auth_token)
 
 #print textMessage
 
-client.messages.create(
+
+
+def some_job():
+	client.messages.create(
     to=textTo,
     from_=textFrom,
     body=textMessage)
-
-def some_job():
-	print "yes"
 
 scheduler = BlockingScheduler()
 scheduler.add_job(some_job, 'interval', days=1)
